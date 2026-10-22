@@ -26,6 +26,7 @@ from .const import (
     SEASON_SUMMER,
     SERVICE_NAMES,
     UNIT_CELSIUS,
+    UNIT_CELSIUS_1,
     UNIT_LEVEL,
     ZONE_LEFT,
     ZONE_RIGHT,
@@ -92,7 +93,7 @@ class HeatControl:
 
     @property
     def is_celsius(self) -> bool:
-        return self.unit == UNIT_CELSIUS
+        return self.unit in (UNIT_CELSIUS, UNIT_CELSIUS_1)
 
     @property
     def is_known(self) -> bool:
@@ -101,7 +102,7 @@ class HeatControl:
     @property
     def step(self) -> float:
         """`<간격><축>` 인코딩의 앞쪽 숫자."""
-        if self.is_celsius:
+        if self.unit == UNIT_CELSIUS:
             return 0.5
         return 1.0
 

@@ -541,7 +541,8 @@ def airone_mode_label(mode: int, option: int) -> str:
 # dex 전수 검색 결과 값은 이 둘뿐이다. `<간격><축>` 형식.
 UNIT_LEVEL: Final = "1.0L"  # heater.*.level.set — 정수 단계
 UNIT_CELSIUS: Final = "0.5C"  # heater.*.temperature.set — 0.5도 간격
-KNOWN_UNITS: Final = (UNIT_LEVEL, UNIT_CELSIUS)
+UNIT_CELSIUS_1: Final = "1.0C"  # heater.*.temperature.set — 1.0도 간격 (온수형)
+KNOWN_UNITS: Final = (UNIT_LEVEL, UNIT_CELSIUS, UNIT_CELSIUS_1)
 
 # --- operationMode (KDMode.WIFI 맵) ---------------------------------------
 
